@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Muted User Settings</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      width: 300px;
+      padding: 10px;
+    }
+    h3 {
+      margin-top: 0;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+    #controls {
+      display: flex;
+      margin-bottom: 15px;
+    }
+    #new-username {
+      flex-grow: 1;
+      margin-right: 5px;
+    }
+    #muted-list {
+      list-style: none;
+      padding: 0;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    #muted-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px;
+      border-bottom: 1px solid #eee;
+    }
+    .remove-btn {
+      cursor: pointer;
+      color: red;
+      font-weight: bold;
+      padding: 0 5px;
+    }
+  </style>
+</head>
+<body>
+  <h3>Add User to Mute</h3>
+  <div id="controls">
+    <input type="text" id="new-username" placeholder="@username">
+    <button id="add">Add</button>
+  </div>
+
+  <h3>Muted Users</h3>
+  <ul id="muted-list">
+    </ul>
+
+  <script src="popup.js"></script>
+</body>
+</html>

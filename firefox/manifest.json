@@ -1,0 +1,57 @@
+{
+    "manifest_version": 3,
+    "name": "Hide My Tweets on X.com",
+    "description": "Hide tweets from specified users on X.com.",
+    "version": "2.0",
+    "permissions": [
+      "storage",
+      "webNavigation",
+      "tabs"
+    ],
+    "background": {
+      "scripts": ["background.js"]
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://x.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/16.png",
+        "48": "icons/48.png",
+        "128": "icons/128.png"
+      }
+    },
+    "icons": {
+      "16": "icons/16.png",
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    },
+    "browser_specific_settings": {
+        "gecko": {
+          "id": "hide-tweets-x@example.com",
+          
+          "data_collection_permissions": {
+            "description": "Collects necessary data to hide tweets from specified users on X.com.",
+            
+            
+            "personallyIdentifyingInfo": {
+              "description": "Saves the list of muted users (which you provide as settings) using Firefox Sync (storage.sync)."
+            },
+            
+            
+            "browsingActivity": {
+              "description": "Reads the current tab's URL (tabs, webNavigation) to determine when to apply the mute rules."
+            },
+
+            "required": [
+              "personallyIdentifyingInfo",
+              "browsingActivity"
+            ]
+          }
+        }
+    }
+}
